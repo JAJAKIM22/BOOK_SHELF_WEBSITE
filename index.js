@@ -37,8 +37,8 @@ function myFunction() {
     <div class="col-4">
       <div class="proCont">
         <img src="${itemPro.url}" alt="BOOK IMAGE">
-        <h3>${itemPro.author}</h3>
-        <h3>${itemPro.title}</h3>
+        <h3>AUTHOR: ${itemPro.author}</h3>
+        <h3>BOOK TITLE: ${itemPro.title}</h3>
         <h3>RATING:${itemPro.rating}</h3>
        </div>
       </div>
