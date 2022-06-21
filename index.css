@@ -17,6 +17,10 @@ h3 {
   text-align: center;
   background-color: pink;
 }
+#book{
+    text-align: center;
+    background-color: pink;
+  }
 #home{
   text-align: center;
   background-color:blue;
@@ -85,6 +89,10 @@ h3 {
     min-height: 70vh;
     padding: 30px;
   }
+#Book{
+    min-height: 70vh;
+    padding: 30px;
+  }
   
 #projects .proCont{
     background-color: white;
@@ -101,15 +109,4 @@ h3 {
     object-fit: cover;
     padding-bottom: 10px;
   }
-  #projects .languages{
-    padding-top: 15px;
-  }
   
-  #projects .languages span{
-    background-color: purple;
-    padding: 5px;
-    border-radius: 5px;
-    color: white;
-    margin: 1px;
-    font-size: 13px;
-  }

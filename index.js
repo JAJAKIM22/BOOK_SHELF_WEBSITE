@@ -11,8 +11,8 @@ function myFunction() {
     const projectUrl = "./db.json"
  
   // containers
-    let projectContainer = document.getElementById('projects') 
-  
+    let projectContainer = document.getElementById('Book') 
+    let bookDetails = document.getElementById('Book') 
   //get projects
   function getProjects(){
     let reqOptions = {
@@ -40,14 +40,12 @@ function myFunction() {
         <h3>${itemPro.author}</h3>
         <h3>${itemPro.title}</h3>
         <h3>RATING:${itemPro.rating}</h3>
-       <div class="languages">
-        <span>PRICE:${itemPro.price}</span>
-        <span>${itemPro.date}</span>
        </div>
       </div>
     </div> ` 
     projectContainer.innerHTML += proCard
   }
+  
   
 
 
