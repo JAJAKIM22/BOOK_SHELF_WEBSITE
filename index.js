@@ -8,8 +8,10 @@ function myFunction() {
   }
 
   document.addEventListener("DOMContentLoaded", () => {
-    const projectUrl = "https://books39.p.rapidapi.com/CZFA4F/books/?rapidapi-key=07fa193556msh889d95d2b765e6cp133e5cjsna64dd92f0841"
-    
+    const projectUrl = "./db.json"
+ 
+  // containers
+    let projectContainer = document.getElementById('projects') 
   
   //get projects
   function getProjects(){
@@ -23,14 +25,31 @@ function myFunction() {
         //array results
 
         results.forEach(proitem=>{
-          console.log(proitem)
-          console.log('next item')
+          displayProject(proitem)
+          
         })
         
       })       
   
     }
-  // Display books
+  function displayProject(itemPro){
+   const proCard = `
+    <div class="col-4">
+      <div class="proCont">
+        <img src="${itemPro.url}" alt="BOOK IMAGE">
+        <h3>${itemPro.author}</h3>
+        <h3>${itemPro.title}</h3>
+        <h3>RATING:${itemPro.rating}</h3>
+       <div class="languages">
+        <span>PRICE:${itemPro.price}</span>
+        <span>${itemPro.date}</span>
+       </div>
+      </div>
+    </div> ` 
+    projectContainer.innerHTML += proCard
+  }
+  
+
 
   getProjects()
 })  
