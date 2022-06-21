@@ -7,14 +7,37 @@ function myFunction() {
     }
   }
 
-  fetch("https://book4.p.rapidapi.com/?rapidapi-key=07fa193556msh889d95d2b765e6cp133e5cjsna64dd92f0841")
-	.then(parseResponse)
-	.then(logResponse)
+  document.addEventListener("DOMContentLoaded", () => {
+    const projectUrl = "https://books39.p.rapidapi.com/CZFA4F/books/?rapidapi-key=07fa193556msh889d95d2b765e6cp133e5cjsna64dd92f0841"
+    
+  
+  //get projects
+  function getProjects(){
+    let reqOptions = {
+      method:'GET'
+    }
+  
+    fetch(projectUrl, reqOptions)
+      .then((response)=> response.json())
+      .then(results => {
+        //array results
 
-function parseResponse(response){
-	return response.json()
-}
+        results.forEach(proitem=>{
+          console.log(proitem)
+          console.log('next item')
+        })
+        
+      })       
+  
+    }
+  // Display books
 
-function logResponse(response){
-	console.log(response)
-}
+  getProjects()
+})  
+
+
+
+    
+
+
+
