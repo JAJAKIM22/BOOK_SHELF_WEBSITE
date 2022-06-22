@@ -33,6 +33,23 @@ function myFunction() {
       })        
       })           
     }
+    function postProjects(){
+      let reqOptions = {
+        method:'POST'
+      }
+    
+      fetch(projectUrl, reqOptions)
+        .then((response)=> response.json())
+        .then(results => {
+          //array results
+  
+          results.forEach(newbook=>{
+            displayNewbook(newbook)
+            
+          })      
+        })           
+      }
+  
   function displayProject(itemPro){
    const proCard = `
     <div class="col-4">
@@ -57,6 +74,10 @@ function myFunction() {
     </span>
     `
     bookDetails.innerHTML += newCard
+  }
+
+  function displayNewbook(newbook){
+    
   }
   
 
