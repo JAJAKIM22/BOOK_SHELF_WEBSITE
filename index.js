@@ -49,11 +49,12 @@ function myFunction() {
   }
   function displayBooks(item){
     const newCard = `
-    <div class="col-4">
-    <div class="proCont">
+    <div class="col-6">
+    <div class="new">
+    <span>
     <h3>BOOK TITLE: ${item.title}</h3>
     <h3>BOOK DETAILS: ${item.detail}</h3>
-    
+    </span>
     `
     bookDetails.innerHTML += newCard
   }
