@@ -19,8 +19,9 @@ h3 {
 }
 #booklist{
   text-align: center;
-  background-color: pink;
-}
+    background-color: rgba(0, 0, 184, 0.075);
+  };
+
 #book{
     text-align: center;
     background-color: pink;
