@@ -12,7 +12,6 @@ function myFunction() {
  
   // containers
     let projectContainer = document.getElementById('Book') 
-    let bookDetails = document.getElementById('bookDetails')
   //get projects
   function getProjects(){
     let reqOptions = {
@@ -33,22 +32,6 @@ function myFunction() {
       })        
       })           
     }
-    function postProjects(){
-      let reqOptions = {
-        method:'POST'
-      }
-    
-      fetch(projectUrl, reqOptions)
-        .then((response)=> response.json())
-        .then(results => {
-          //array results
-  
-          results.forEach(newbook=>{
-            displayNewbook(newbook)
-            
-          })      
-        })           
-      }
   
   function displayProject(itemPro){
    const proCard = `
@@ -76,12 +59,50 @@ function myFunction() {
     bookDetails.innerHTML += newCard
   }
 
-  function displayNewbook(newbook){
-    
-  }
+
   
 
   getProjects()
+
+
+let addbookForm = document.querySelector('#addbookForm')
+
+addbookForm.addEventListener('submit', (event)=>{
+  event.preventDefault();
+
+  let fdurl = event.target.url.value
+  let fdtitle = event.target.title.value
+  let fdauthor = event.target.author.value
+  let fddetail = event.target.detail.value
+  let fdrating = event.target.rating.value
+  let fdprice = event.target.price.value
+  let fddate = event.target.date.value
+ //data
+ let fdata = new FormData();
+ fdata.append("url", fdurl)
+ fdata.append("title", fdtitle)
+ fdata.append("author", fdauthor)
+ fdata.append("detail", fddetail)
+ fdata.append("rating", fdrating)
+ fdata.append("price", fdprice)
+ fdata.append("date", fddate)
+
+ //options
+ let reqOptions =  {
+  method: "POST",
+  body: fdata,
+ }
+
+ //post data
+ fetch(projectUrl, reqOptions)
+    .then(response => response.text())
+    .then(result => console.log(result))
+    .catch(err=>console.log('error', error))
+   
+  
+})
+
+
 })  
 
 
