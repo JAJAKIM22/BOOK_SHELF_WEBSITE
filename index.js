@@ -12,7 +12,7 @@ function myFunction() {
  
   // containers
     let projectContainer = document.getElementById('Book') 
-    let bookDetails = document.getElementById('Book') 
+    let bookDetails = document.getElementById('bookDetails')
   //get projects
   function getProjects(){
     let reqOptions = {
@@ -28,9 +28,10 @@ function myFunction() {
           displayProject(proitem)
           
         })
-        
-      })       
-  
+        results.forEach(item=>{
+          displayBooks(item) 
+      })        
+      })           
     }
   function displayProject(itemPro){
    const proCard = `
@@ -40,14 +41,23 @@ function myFunction() {
         <h3>AUTHOR: ${itemPro.author}</h3>
         <h3>BOOK TITLE: ${itemPro.title}</h3>
         <h3>RATING:${itemPro.rating}</h3>
+       
        </div>
       </div>
-    </div> ` 
+     ` 
     projectContainer.innerHTML += proCard
   }
+  function displayBooks(item){
+    const newCard = `
+    <div class="col-4">
+    <div class="proCont">
+    <h3>BOOK TITLE: ${item.title}</h3>
+    <h3>BOOK DETAILS: ${item.detail}</h3>
+    
+    `
+    bookDetails.innerHTML += newCard
+  }
   
-  
-
 
   getProjects()
 })  

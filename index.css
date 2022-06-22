@@ -21,6 +21,10 @@ h3 {
     text-align: center;
     background-color: pink;
   }
+#new{
+    text-align: center;
+    background-color: pink;
+  }
 #home{
   text-align: center;
   background-color:blue;
@@ -93,7 +97,11 @@ h3 {
     min-height: 70vh;
     padding: 30px;
   }
-  
+
+#new{
+    min-height: 70vh;
+    padding: 30px;
+  }
 #projects .proCont{
     background-color: white;
     padding: 15px;
