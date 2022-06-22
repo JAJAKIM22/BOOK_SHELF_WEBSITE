@@ -9,7 +9,7 @@ function myFunction() {
 
   document.addEventListener("DOMContentLoaded", () => {
     const projectUrl = "./db.json"
- 
+    const bookUrl = "https://book4.p.rapidapi.com/?rapidapi-key=07fa193556msh889d95d2b765e6cp133e5cjsna64dd92f0841"
   // containers
     let projectContainer = document.getElementById('Book') 
   //get projects
@@ -60,7 +60,6 @@ function myFunction() {
   }
 
 
-  
 
   getProjects()
 
@@ -94,7 +93,7 @@ addbookForm.addEventListener('submit', (event)=>{
  }
 
  //post data
- fetch(projectUrl, reqOptions)
+ fetch(bookUrl, reqOptions)
     .then(response => response.text())
     .then(result => console.log(result))
     .catch(err=>console.log('error', error))
