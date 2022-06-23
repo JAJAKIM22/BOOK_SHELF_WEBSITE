@@ -6,6 +6,9 @@ function myFunction() {
       x.className = "topnav";
     }
   }
+  function myFunction(x) {
+    x.classList.toggle("fa-thumbs-down");
+  }
 
   document.addEventListener("DOMContentLoaded", () => {
     const projectUrl = "./db.json"
@@ -41,6 +44,8 @@ function myFunction() {
         <h3>AUTHOR: ${itemPro.author}</h3>
         <h3>BOOK TITLE: ${itemPro.title}</h3>
         <h3>RATING:${itemPro.rating}</h3>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+         <i onclick="myFunction(this)" class="fa fa-thumbs-up" style="color: black;"></i>
        
        </div>
       </div>
